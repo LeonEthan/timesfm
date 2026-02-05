@@ -1,13 +1,16 @@
 [project]
-name = "timesfm"
-version = "2.0.0"
-description = "A time series foundation model."
+name = "tsagentkit-timesfm"
+version = "1.0.0"
+description = "TimesFM fork distribution for tsagentkit."
 authors = [
     {name = "Rajat Sen", email = "senrajat@google.com"},
     {name = "Yichen Zhou", email = "yichenzhou@google.com"},
     {name = "Abhimanyu Das", email = "abhidas@google.com"},
     {name = "Petros Mol", email = "pmol@google.com"},
     {name = "Michael Chertushkin", email = "chertushkinmichael@gmail.com"},
+]
+maintainers = [
+    {name = "cuizhengliang", email = "czlbou2012@gmail.com"},
 ]
 license = {text = "Apache-2.0"}
 readme = "README.md"
@@ -17,6 +20,12 @@ dependencies = [
     "huggingface_hub[cli]>=0.23.0",
     "safetensors>=0.5.3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/LeonEthan/timesfm"
+Repository = "https://github.com/LeonEthan/timesfm"
+Issues = "https://github.com/LeonEthan/timesfm/issues"
+Upstream = "https://github.com/google-research/timesfm"
 
 [project.optional-dependencies]
 torch = [
@@ -39,7 +48,9 @@ xreg = [
 line-length = 88
 indent-width = 2
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-

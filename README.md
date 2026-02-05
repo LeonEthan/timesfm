@@ -14,6 +14,12 @@ model developed by Google Research for time-series forecasting.
 
 This open version is not an officially supported Google product.
 
+## Fork Notice (tsagentkit)
+
+This repository is a fork of `google-research/timesfm`, published to PyPI as
+`tsagentkit-timesfm` to support the `tsagentkit` project without a GitHub
+dependency. The Python import name remains `timesfm`.
+
 **Latest Model Version:** TimesFM 2.5
 
 **Archived Model Versions:**
@@ -49,34 +55,37 @@ will be under construction over the next few weeks to
 
 ### Install
 
-1.  Clone the repository:
+1.  Install from PyPI:
     ```shell
-    git clone https://github.com/google-research/timesfm.git
-    cd timesfm
-    ```
-
-2.  Create a virtual environment and install dependencies using `uv`:
-    ```shell
-    # Create a virtual environment
-    uv venv
-    
-    # Activate the environment
-    source .venv/bin/activate
-    
-    # Install the package in editable mode with torch
-    uv pip install -e .[torch]
+    pip install "tsagentkit-timesfm[torch]"
     # Or with flax
-    uv pip install -e .[flax]
-    # Or XReg is needed
-    uv pip install -e .[xreg]
+    pip install "tsagentkit-timesfm[flax]"
+    # Or XReg support
+    pip install "tsagentkit-timesfm[xreg]"
     ```
 
-3. [Optional] Install your preferred `torch` / `jax` backend based on your OS and accelerators
+2. [Optional] Install your preferred `torch` / `jax` backend based on your OS and accelerators
 (CPU, GPU, TPU or Apple Silicon).:
 
 -   [Install PyTorch](https://pytorch.org/get-started/locally/).
 -   [Install Jax](https://docs.jax.dev/en/latest/installation.html#installation)
     for Flax.
+
+### From Source (optional)
+
+```shell
+git clone https://github.com/LeonEthan/timesfm.git
+cd timesfm
+
+uv venv
+source .venv/bin/activate
+
+uv pip install -e .[torch]
+# Or with flax
+uv pip install -e .[flax]
+# Or XReg support
+uv pip install -e .[xreg]
+```
 
 ### Code Example
 
